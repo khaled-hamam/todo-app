@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { InstanceType } from 'typegoose';
-import { UserModel, User } from '../Models/User';
+import { UserModel, User } from '../models/User';
 
 export const authorize = async (req: Request, res: Response, next: NextFunction) => {
   const token = req.header('Authorization');

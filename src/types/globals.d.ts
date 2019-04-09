@@ -1,5 +1,5 @@
 import { InstanceType } from 'typegoose';
-import { User } from '../Models/User';
+import { User } from '../models/User';
 
 /**
  * Extending the Request Interface to hold the user
