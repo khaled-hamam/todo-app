@@ -1,5 +1,5 @@
 import { Application, Request, Response } from 'express';
-import { UserModel } from '../Models/User';
+import { UserModel } from '../models/User';
 
 export default class UsersController {
   public constructor(app: Application) {
