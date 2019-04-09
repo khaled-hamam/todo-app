@@ -2,12 +2,15 @@ import express from 'express';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import path from 'path';
 
 import UsersController from './controllers/users.controller';
 import TodosController from './controllers/todos.controller';
+import HomeController from './controllers/home.controller';
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, '/../client/build')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(morgan('combined'));
@@ -35,5 +38,6 @@ mongoose.connect(MONGO_URI, err => {
 });
 
 // Controllers
+new HomeController(app);
 new UsersController(app);
 new TodosController(app);
